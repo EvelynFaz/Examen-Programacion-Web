@@ -1,0 +1,130 @@
+<div class="form container">
+    <h3>Registro de Persona</h3>
+{{nombre1}}
+    <br />
+    <div class="card col-6 border-warning mb-3">
+        <div class="card-header">
+            <h5>Datos</h5>
+        </div>
+        <div class="card-body text-warning">
+            <form [formGroup]="registro">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Tipo de Producto</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Sierras</option>
+                        <option>Articulos de mano</option>
+                    </select>
+                </div>
+                <label>Cédula</label>
+                <input type="text" class="form-control" data-role="input" formControlName="cedula" placeholder="Cédula">
+                <div class="error" *ngIf="cedula.invalid && (cedula.dirty|| cedula.touched)">
+                    <span id="alerta" class="tally alert" *ngIf="cedula.errors.required">Cédula requerida</span>
+                    <span span id="alerta" class="tally alert" *ngIf="(cedula.dirty || cedula.touched) && cedula.invalid && cedula.errors.pattern">Cédula no
+                        valida</span>
+                    <span id="alerta" class="tally alert" *ngIf="cedula.errors.minlength">Deben ser 10
+                        dígitos</span>
+                    <span id="alerta" class="tally alert" *ngIf="cedula.errors.maxlength">Deben ser 10
+                        dígitos</span>
+                </div>
+                <p></p>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" data-role="input" formControlName="nombre" placeholder="Nombre">
+                        <div class="error" *ngIf="nombre.invalid && (nombre.dirty|| nombre.touched)">
+                            <span id="alerta" class="tally alert" *ngIf="nombre.errors.required">Nombre requerido</span>
+                            <br />
+                            <span id="alerta" class="tally alert" *ngIf="nombre.errors.minlength">Nombre tiene menos de
+                                3
+                                letras</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Apellido</label>
+                        <input type="text" class="form-control" data-role="input" formControlName="apellido" placeholder="Apellido">
+                        <div class="error" *ngIf="apellido.invalid && (apellido.dirty|| apellido.touched)">
+                            <span id="alerta" class="tally alert" *ngIf="apellido.errors.required">Apellido
+                                requerido</span>
+                            <span id="alerta" class="tally alert" *ngIf="apellido.errors.minlength">Apellido tiene menos
+                                de 3
+                                letras</span>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <label>Teléfono</label>
+                <input type="text" class="form-control" data-role="input" formControlName="telefono" placeholder="Teléfono">
+                <div class="error" *ngIf="telefono.invalid && (telefono.dirty|| telefono.touched)">
+                    <span id="alerta" class="tally alert" *ngIf="telefono.errors.required">Teléfono</span>
+                    <span id="alerta" class="tally alert" *ngIf="telefono.errors.minlength">Teléfono minimo de 9 dígitos</span>
+                    <span id="alerta" class="tally alert" *ngIf="telefono.errors.maxlength">Teléfono máximo de 10 dígitos</span>
+                </div>
+                <p></p>
+                <label>Código Postal</label>
+                <input type="text" class="form-control" data-role="input" formControlName="nombre" placeholder="Código Postal">
+                <div class="error" *ngIf="nombre.invalid && (nombre.dirty|| nombre.touched)">
+                    <span id="alerta" class="tally alert" *ngIf="nombre.errors.required">Nombre es requerido</span>
+                    <br />
+                    <span id="alerta" class="tally alert" *ngIf="nombre.errors.minlength">Nombre tiene menos de 3
+                        letras</span>
+                </div>
+                <p></p>
+                <button type="button" class="btn btn-success">Registrar</button>
+                <p></p>
+                <!--
+                        <input type="text" data-role="input" formControlName="nombre" placeholder="Nombre">
+                        <div class="error" *ngIf="nombre.invalid && (nombre.dirty|| nombre.touched)">
+                            <span id="alerta" class="tally alert" *ngIf="nombre.errors.required">Nombre es requerido</span>
+                            <br />
+                            <span id="alerta" class="tally alert" *ngIf="nombre.errors.minlength">Nombre tiene menos de 3 letras</span>
+                        </div>
+                        <br />
+                        <input type="email" data-role="input" formControlName="email" placeholder="google@gmail.com">
+                        <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <span id="alerta" class="tally alert" *ngIf="email.errors.required">Email es requerido</span>
+                            <br>
+                            <span id="alerta" class="tally alert" *ngIf="email.errors,minlength">Email tiene menos de 5 letras</span>
+                            <br>
+                            <span id="alerta" class="tally alert" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">Email no válido</span>
+                        </div>
+                        <br>
+                        <textarea type="text" data-role="input" formControlName="mensaje" placeholder="Escribe tu Mensaje"></textarea>
+                        <div class="error" *ngIf="mensaje.invalid && (mensaje.dirty|| mensaje.touched)">
+                            <span id="alerta" class="tally alert" *ngIf="mensaje.errors.required">Nombre es requerido</span>
+                            <br />
+                            <span id="alerta" class="tally alert" *ngIf="mensaje.errors.minlength">Nombre tiene menos de 20
+                                letras</span>
+                            <br />
+                            <span id="alerta" class="tally alert" *ngIf="mensaje.errors.maxlength">Nombre tiene más de 100 letras</span>
+                        </div>
+                        <br />
+                        <button type="submit" class="button primary large" (click)="validar()" [disabled]="!registro.valid">Enviar</button>-->
+            </form>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                 <table class="table table-striped">
+                    <thead>
+                    <th>id</th>
+                      <th>firstname</th>
+                      <th>lastname</th>
+                      <th>age</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of Personas">
+                            <td><input  type="number" id="id" required name="id" #id value={{item.id}} disabled></td>
+                            <td><input  type="text" id="nombre" required name="nombre" #nombre value={{item.nombre}}></td>
+                            <td><input  type="text" id="apellido" required name="apellido" #apellido value={{item.apellido}}></td>
+                            <td><input  type="number" id="cedula" required name="cedula" #cedula value={{item.cedula}}></td>
+                            <td><input  type="number" id="telefono" required name="telefono" #telefono value={{item.telefono}}></td>
+                            <td><input  type="text" id="codigoPostal" required name="codigoPostal" #codigoPostal value={{item.codigoPostal}}></td>
+                            <td><button (click)="actualizarPersona(id.value,nombre.value,apellido.value,cedula.value,telefono.value,codigoPostal.value)" class="btn btn-primary">Actualizar</button></td>
+                            <td><button (click)="eliminarPersona(item.id)" class="btn btn-primary">Eliminar</button></td>
+                        </tr>
+                    </tbody>
+                    
+                 </table>
+                </div>
+    </div>
+</div>
